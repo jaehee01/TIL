@@ -52,8 +52,6 @@
 - git log
     - commit 목록(history) 확인
 
-![image.png](https://prod-files-secure.s3.us-west-2.amazonaws.com/975a21d4-651f-4b75-80c5-fafc7cf08503/e4863798-bffe-4c15-90de-80e3e09331c7/image.png)
-
 vim 에디터를 통해 commit 수정 가능
 
 - git push origin master
