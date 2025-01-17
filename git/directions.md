@@ -1,3 +1,4 @@
+## git 기본 동작
 - git init
     - 로컬 저장소 설정(초기화)
 - git add
@@ -57,7 +58,7 @@ vim 에디터를 통해 commit 수정 가능
 - git push origin master
     - 원격 저장소에 commit 목록 업로드
 
-### git commit
+## git commit
 
 **🌟 코드 변경 후 저장 → git add 파일명→ git commit -m “커밋명”→ git push origin master**
 
@@ -70,7 +71,7 @@ vim 에디터를 통해 commit 수정 가능
 - git clone remote_repo_url
     - 원격 저장소 전체를 복제
 
-### git pull&clone
+## git pull&clone
 
 원격 저장소를 복제
 
@@ -84,6 +85,61 @@ vim 에디터를 통해 commit 수정 가능
 
 - git pull
 
-### gitignore
+## gitignore
 
 git에서 특정 파일이나 디렉토리를 추적하지 않도록 설정하는 데 사용되는 텍스트 파일
+
+
+## git revert
+
+특정 commit을 없었던 일로 만드는 작업(재설정)
+
+프로젝트 기록에서 commit을 없었던 일로 처리 후 그 결과를 새로운 commit으로 추가함
+
+- git revert <commit id>
+    - revert 하기
+- git log —oneline
+    - commit 목록 확인(commit id 알아내기)
+
+커밋 기록이 사라지는건 아니고, 그당시의 사건(파일)만 삭제
+
+git에서 기록이 손실되는 것을 방지함
+
+커밋 삭제는 가장 최근의 커밋만 삭제할 수 있음
+
+## git reset
+
+특정 commit으로 되돌아가는 작업
+
+특정 commit으로 되돌아가면, 되돌아간 이후의 commit은 모두 삭제됨
+
+깃허브가 아닌 로컬에서의 commit 수정 기능. push 이후에는 사용하지 말 것
+
+- git reset [옵션] <commit id>
+    
+    [옵션] 
+    
+    --soft 삭제된 commit의 staging area에 남김
+    
+    --mixed 삭제된 commit의 기록을 working directory에 남김(기본값)
+    
+    --hard 삭제된 commit의 기록을 남기지 않음
+    
+
+untracked.txt : commit에 포함된 적 없는 파일
+
+이미 삭제한 commit으로 돌아가기
+
+- git reflog
+    - HEAD가 이전에 가리켰던 모든 commit을 보여줌
+    - hart 옵션으로 지워졌던 commit도 reflog로 조회하여 복구 가능
+
+## git restore
+
+Modified 상태의 파일 되돌리기
+
+Working Directory에서 파일을 수정한 뒤, 파일의 수정 사항을 취소하고, 원래 모습대로 되돌리는 작업
+
+- git restore 파일명
+    - 수정 전으로 되돌릴 수 있음
+    - 원래 파일로 덮어쓰는 원리이므로, 수정한 내용은 전부 사라짐
