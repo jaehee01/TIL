@@ -1,4 +1,4 @@
-# Python : Basic syntax1
+# Python : Basic syntax
 
 # 파이썬 실행
 
